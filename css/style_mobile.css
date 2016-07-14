@@ -1,0 +1,328 @@
+* { 
+
+	font-family: 'latoregular';
+}
+
+.header{
+	font-family: 'latobold';
+	text-transform: uppercase;
+}
+
+.modal{
+	position: absolute;
+	top: 0px;
+	width: 775px;
+	background: rgba(255,255,255,.9);
+	height: 100%;
+	padding:200px 0px 300px 0px;
+	z-index:99999999999;
+}
+
+
+#contenedor_instrucciones{
+	width:600px;
+	margin:0px auto;
+	padding:10px;
+	border:1px gray solid;
+	background-color:white;
+
+}
+
+.tituloT{
+	font-family: 'latobold';
+	text-transform:uppercase;
+}
+
+.incumbent{
+	color:#8BAA3F;
+}
+
+div.zoomout{
+	margin-top:0px;
+	margin-bottom:20px;
+}
+
+
+div.special_title {
+	font-size: 21px;
+	background-color: rgb(0, 64, 0);
+	padding: 5px 0px 5px 40px;
+	color: white;
+	margin: 20px 0px 0px 0px;
+	clear: both;
+}
+
+.especial{
+	margin-top:0px !important;
+}
+
+div#info_cand_gove, div#info_cand_sena{
+	z-index:99999999999;
+}
+
+p.l_incumbent {
+	display: inline-block;
+	float: right;
+	margin-top: 20px;
+	font-size: 12px;
+}
+
+.link_can{
+	color:#538935;
+}
+
+div.details {
+	width: 202px;	
+	float: left;
+	margin-left: 10px;
+}
+
+div.details ul {
+	list-style: none;
+	font-size: 13px;
+	color:#000;
+}
+
+div.details ul li {
+	padding: 5px 0px;
+	border-bottom: 1px gray solid;
+}
+
+div.details ul li a{
+	color:#8BAA3F;
+	font-weight: bold;
+}
+
+.name_candidate{
+	font-family: 'latobold';	
+}
+
+span.data.ng-binding, .data2 {
+	display: inline-block;
+	float: right;
+	color: #000;
+	width: 100px;
+	text-align: center;
+	font-family: 'latobold_italic';
+}
+
+.data2{
+	width:60px;
+}
+
+.data3{
+	color: #000;	
+	font-family: 'latobold_italic';	
+}
+
+div.sign_can {
+	color: white;
+	width: 92px;
+	text-align: center;
+	margin-left: -92;
+	font-family: 'latobold';	
+	font-size:13px;
+	padding: 3px 0px;
+}
+
+div.sign_can.dem {
+	background-color: #3E65AA;
+}
+
+div.sign_can.rep {
+	background-color: #E93838;
+}
+
+.movil{
+	display:none;
+}
+
+.marcado{
+	stroke:black !important;
+	stroke-width:2.5px !important;
+}
+
+@media only screen and (max-width: 479px) {	
+	.movil{
+		display:block !important;
+	}
+	.web, hr{
+		display:none !important;
+	}
+	div.content {
+		width: 100%;
+		margin: 0px;
+	}
+
+	img#color_codes {
+		width: 300px;
+		margin: 0px !important;
+	}
+
+	.code_colors {
+		padding-left: 0px;
+	}
+
+	.title {
+		width: 280px;
+		padding: 0px;
+		margin: 0px auto;
+	}
+
+	.candidatos{
+		position:relative;
+		margin-left:0px;
+	}
+
+	.infoExtra {
+		position: relative;
+		margin-left: 0px;
+		margin-top: 13px;
+	}	
+
+	img#lang{
+		position:relative;
+		margin-left:0px;
+		float:right;
+
+	}
+
+	rect{
+		display:none !important;
+	}
+
+	#state_map svg{
+		width:295px;
+		height: 300px;
+		margin:0px !important;		
+	}
+
+	#state_map{
+		text-align:center;
+		padding:0px !important;
+	}
+
+	.titulo_nota p.nm, .nota p{
+		width:270px;
+		margin:0px auto;
+		display:block;
+	}
+
+	.nota{
+		margin:0px;
+		width:300px;		
+	}
+
+	.boton{
+		margin-left:40px;
+	}
+
+	.autocomplete, .candidatos{
+		position:relative;
+		display:block;
+		border:0px;
+		margin:0px auto;
+		text-align:center;
+	}
+
+	div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{
+		margin-left:40px;
+	}
+
+	.header{
+		padding-top:45px;
+	}
+
+	div.modal {
+		width: 300px;
+	}
+
+	div#contenedor_instrucciones {
+		width: 200px;
+		margin: 0px auto;
+	}
+
+	div#info_cand_gove, div#info_cand_sena{
+		width: 100%;
+	}
+
+	table.extra {
+		margin: 0px;
+		clear:both;
+	}
+
+	div#sena_details , div#gove_details{
+		margin-left: 10px;
+		width: 300px;
+		height: auto;
+		padding-bottom: 10px;
+		float: left;
+	}
+
+	div.svg_state {
+		width: 100;
+		float: left;
+		height: 70px;
+	}
+
+	img#lang{
+		margin-top: -115px;
+		margin-left: 40px;
+	}
+
+	p.state_can.ng-binding {
+		/* display: inline-block; */
+		margin-left: 20px;
+		float: left;
+	}
+
+	div.svg_state svg {
+		width: 100px;
+		height: 70px;
+	}
+
+	table.extra, table.t2{
+		width: 270px;
+		margin-left: 5px;				
+		clear: both;
+	}
+
+	table.extra td, table.t2 td{
+		font-weight: normal;
+		border-top: 1px gray solid;
+		border-bottom: 1px gray solid;
+		border-right:0px;
+		border-left:0px;
+	}
+
+	div.candidates_senadores_left, div.candidates_senadores_right{
+		width: 270px;
+		margin-left: 10px;
+	}
+
+	div.details {
+		width: 165px;
+	}
+
+	.data2 {
+		width: 30px;
+	}
+
+	span.data.ng-binding {		
+		width: 90px;
+	}
+
+	div.code_colors.movil {
+		text-align: center;
+		padding-bottom: 20px;
+	}
+
+	div.zoomout{
+		margin-top:10px;
+	}
+
+	td.dos {
+		width: 95px;
+		border-left:1px gray solid !important;
+	}
+}

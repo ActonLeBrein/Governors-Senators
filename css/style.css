@@ -1,0 +1,779 @@
+/**
+	Estilos para la infografía "Gobernadores & Senadores"
+**/
+
+* { margin: 0; padding: 0; border:none; font-family: 'latoregular'; color:#666666; text-shadow: 0 0px 0 #fff !important;}
+img {border:none;}
+
+*:focus {outline: none;}
+
+.content{
+	width:775px;
+	margin: 0px 10px;
+}
+
+.header{
+	clear:both;
+	width:100%;
+	overflow: hidden;
+	text-align: center;
+	padding-top: 30px;
+	font-size: 18px;
+	height: 50px;
+}
+
+.lang_version{
+	margin: -22px  0 0 0;
+	float: right;
+}
+
+img#lang {
+	//margin-left: 238px;
+	margin-top: -20px;
+	//position: absolute;
+}
+.title {
+	clear: both;
+	width: 749px;
+	overflow: hidden;
+	font-size: 14px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: center;
+}
+hr {
+	width: 749px;
+	background-color: #A0A0A0;
+	height:1px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+.contenido {
+	padding-top: 20px;
+}
+.autocomplete{
+	width: 252px;
+	height: 40px;
+	padding-right: 40px;
+	background: url("../images/search.png") no-repeat center right;
+	background-size: 20px 20px;
+	float:left;
+	background-position-x: 220px;
+	border-right: 1px solid #A0A0A0;
+}
+.candidatos {
+	height: 32px;
+	width: 294px;
+	margin-left: 340px;
+	padding-top: 8px;
+	position: absolute;
+	float: left;
+	border-right: 1px solid #A0A0A0;
+}
+.candidatos > span {
+	font-size: 14px;
+}
+.opcion_color{
+	color: #A0A0A0;	
+	cursor:pointer;
+}
+
+.opcion_color svg circle{
+	fill: #A0A0A0;
+}
+
+.active{
+	color: #8AA93E;
+}
+.active svg circle{
+	fill: #8AA93E;
+}
+
+.infoExtra {
+	position: absolute;
+	margin-left: 700px;
+	margin-top: 13px;
+}
+div.info_acerca img, div.verInstrucciones img {
+	position: absolute;
+	margin-left: 15px;
+	margin-top: -3px;
+}
+div.verInstrucciones {
+	width: 100px;
+	float: right;
+	font-size: 12px;
+}
+
+/*-------------------------*/
+#state_map {
+	padding: 40px 30px 40px 30px;
+}
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+#states {
+  fill: #aaa;
+}
+
+#state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: left;
+  width: 180px;
+  height: 30px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+path {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: .5px;
+}
+
+/*-------------------------*/
+
+.code_colors {
+	padding-left: 54px;
+}
+.nota {
+	margin-top:50px;
+	margin-left: 30px;
+}
+.titulo_nota {
+	margin-bottom: 15px;
+}
+.titulo_nota p.nm {
+	width: 115px;
+	display: inline-block;
+	vertical-align: top;
+	font-weight: bold;
+	font-size: 12px;
+}
+.titulo_nota p.linea {
+	border-bottom: 1px solid #828282;
+	display: inline-block;
+	vertical-align: middle;
+	width: 610px;
+	height: 7px;
+}
+div.nota p {
+	font-size:10px;
+}
+
+.boton{
+	width: 150px;
+	padding: 7px 0px 7px 25px;
+	margin: 50px 0px 10px 147px;
+	float: left;
+}
+
+.d4 {		
+	width:236px;
+	/*margin:20px auto;*/
+	clear:both;
+	background: url("../images/univision2.png") no-repeat !important;
+	background-position:0px 15px !important;
+	background-size:84px 52px !important;
+	padding:20px 0px;
+	display:inline-block;
+}
+.d4 span, .d4 a {
+	display: block;
+	margin-left: 65px;
+	font-size: 12px;
+	color: #858585 !important;
+	text-decoration:none;
+	font-weight: normal !important;
+}
+.d4 span{
+	background-position: 12px 1px !important;
+	background-size: 15px 15px !important;
+	padding: 2px 0px 2px 20px;
+}
+.footer{
+	text-align:center;
+	padding: 25px 0px;	
+}
+
+#sena_details {
+	margin-top: 45px;
+	margin-left: 30px;
+	width: 745px;
+	height: 240px;
+	background-color: #E6E6E6;
+}
+p.state_can {
+	padding-top: 30px;
+	margin-left: 70px;
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+}
+#sena_details > img {
+	margin-left: 60px;
+	margin-top: 20px;
+}
+.t1 {
+	width: 70%;
+	margin-top: -110px;
+	margin-left: 200px;
+	border-bottom: 2px solid #5C5C5C;
+}
+.t2 {
+	width: 70%;
+	margin-left: 200px;
+}
+table, th {
+    border-collapse: collapse;
+    font-size: 13px;
+	text-align: center;
+}
+th {
+    border-bottom: 1px solid #5C5C5C;
+    border-top: 1px solid #5C5C5C;
+	padding: 3px;
+	font-weight: 300;
+}
+td {
+	border-bottom: 1px solid #5C5C5C;
+	padding: 3px;
+	font-weight: bold;
+	color: #000;
+}
+.tb_mid {
+	border-left: 1px solid #5C5C5C;
+	border-right: 1px solid #5C5C5C;
+}
+p.demo {
+	color: #3E65AA;
+	display: inline-table;
+}
+p.rep {
+	color: #E93838;
+	display: inline-table;
+}
+.curve {
+	font-style: italic;
+}
+.candidates_senadores_left {
+	width: 40%;
+	margin-left: 65px;
+	display: inline-block;
+	margin-top: 25px;
+	margin-right: 25px;
+}
+.candidates_senadores_left_i {
+	width: 40%;
+	margin-left: 65px;
+	display: inline-block;
+	margin-top: 25px;
+	margin-right: 25px;
+}
+.i_can {
+	color: #8BAA3F;
+	font-size: 13px;
+	font-weight: bold;
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.line_cans_left {
+	width: 100%;
+	margin-left: 0;
+}
+.candidates_senadores_right {
+	width: 40%;
+	margin-left: 25px;
+	display: inline-block;
+	margin-top: 25px;
+}
+.line_cans_right {
+	width: 100%;
+	margin-left: 0;
+	margin-right: -35px;
+}
+.cand_num {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 16px;
+	color: #000;
+}
+.verticalLine {
+    border-left: thick solid #ff0000;
+    display: inline-block;
+}
+.can_pic {
+	margin-top: 10px;
+	float: left;
+}
+.sign_can {
+	float: left;
+	display: inline-block;
+	margin-top: 116px;
+	margin-left: -93px;
+}
+.can_name {
+	font-size: 13px;
+	font-weight: bold;
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	color: #666666;
+}
+.line_cand_1 {
+	display: inline-block;
+	float: right;
+	margin-top: -105px;
+	margin-right: 0;
+	width: 210px;
+}
+.link_can {
+	font-size: 13px;
+	color: #8BAA3F !important;
+	float: left;
+	margin-left: 100px;
+	margin-top: -100px;
+	font-weight: bold;
+}
+.line_cand_2 {
+	display: inline-block;
+	float: right;
+	margin-top: -75px;
+	margin-right: 0;
+	width: 210px;
+}
+.mand_can {
+	display: inline-block;
+	font-size: 13px;
+	color: #666666;
+	float: left;
+	font-weight: bold;
+	margin-left: 100px;
+	margin-top: -67px;
+}
+.num_mand {
+	display: inline-block;
+	font-size: 13px;
+	font-style: italic;
+	color: #666666;
+	float: left;
+	font-weight: bold;
+	margin-left: 270px;
+	margin-top: -67px;
+}
+.line_cand_3 {
+	display: inline-block;
+	float: right;
+	margin-top: -45px;
+	margin-right: 0;
+	width: 210px;
+}
+.ori_can_i {
+	display: inline-block;
+	font-size: 13px;
+	color: #000;
+	float: left;
+	margin-left: 100px;
+	margin-top: -40px;
+}
+.ori_can {
+	display: inline-block;
+	font-size: 13px;
+	color: #000;
+	float: left;
+	margin-left: 100px;
+	margin-top: -65px;
+}
+.origen_i {
+	display: inline-block;
+	font-size: 13px;
+	font-style: italic;
+	color: #000;
+	float: left;
+	font-weight: bold;
+	margin-left: 270px;
+	margin-top: -40px;
+}
+.origen {
+	display: inline-block;
+	font-size: 13px;
+	font-style: italic;
+	color: #000;
+	float: left;
+	font-weight: bold;
+	margin-left: 270px;
+	margin-top: -65px;
+}
+.line_cand_4 {
+	display: inline-block;
+	float: right;
+	margin-top: -15px;
+	margin-right: 0;
+	width: 210px;
+}
+.fond_can_i {
+	display: inline-block;
+	font-size: 13px;
+	color: #000;
+	float: left;
+	margin-left: 100px;
+	margin-top: -8px;
+}
+.fond_can {
+	display: inline-block;
+	font-size: 13px;
+	color: #000;
+	float: left;
+	margin-left: 100px;
+	margin-top: -38px;
+}
+.fondo_i {
+	display: inline-block;
+	font-size: 13px;
+	font-style: italic;
+	color: #000;
+	float: left;
+	font-weight: bold;
+	margin-left: 230px;
+	margin-top: -15px;
+}
+.fondo {
+	display: inline-block;
+	font-size: 13px;
+	font-style: italic;
+	color: #000;
+	float: left;
+	font-weight: bold;
+	margin-left: 230px;
+	margin-top: -37px;
+}
+.line_cand_5 {
+	display: inline-block;
+	float: right;
+	margin-top: 8px;
+	margin-right: 0;
+	width: 210px;
+}
+.charge_can {
+	display: inline-block;
+	font-size: 13px;
+	color: #000;
+	float: left;
+	margin-left: 100px;
+	margin-top: -8px;
+}
+.charge_can_s {
+	display: inline-block;
+	font-size: 13px;
+	color: #666666;
+	float: left;
+	margin-left: 100px;
+	margin-top: -65px;
+}
+.charge_can_i {
+	display: inline-block;
+	font-size: 13px;
+	color: #000;
+	float: left;
+	margin-left: 100px;
+	margin-top: 6px;
+}
+.charge_can_i_s {
+	display: inline-block;
+	font-size: 13px;
+	color: #000;
+	float: left;
+	margin-left: 100px;
+	margin-top: -35px;
+}
+.charge > li {
+	display: inline-block;
+	font-size: 13px;
+	font-style: italic;
+	color: #000;
+	float: left;
+	font-weight: bold;
+	margin-left: 120px;
+}
+.charge_s > li {
+	display: inline-block;
+	font-size: 13px;
+	font-style: italic;
+	color: #666666;
+	float: left;
+	font-weight: bold;
+	margin-left: 120px;
+	margin-top: -45px;
+}
+.charge_i > li {
+	display: inline-block;
+	font-size: 13px;
+	font-style: italic;
+	color: #000;
+	float: left;
+	font-weight: bold;
+	margin-left: 120px;
+}
+.charge_i_s > li {
+	display: inline-block;
+	font-size: 13px;
+	font-style: italic;
+	color: #000;
+	float: left;
+	font-weight: bold;
+	margin-left: 120px;
+	margin-top: -15px;
+}
+.line_cand_6 {
+	display: inline-block;
+	float: right;
+	margin-top: 8px;
+	margin-right: 0;
+	width: 210px;
+}
+.commit_can {
+	display: inline-block;
+	font-size: 13px;
+	color: #000;
+	float: left;
+	margin-left: 100px;
+	margin-top: 6px;
+}
+.commit_can_i {
+	display: inline-block;
+	font-size: 13px;
+	color: #000;
+	float: left;
+	margin-left: 100px;
+	margin-top: 6px;
+}
+.commit > li {
+	display: inline-block;
+	font-size: 13px;
+	color: #000;
+	float: left;
+	font-weight: bold;
+	margin-left: 120px;
+}
+.commit_i > li {
+	display: inline-block;
+	font-size: 13px;
+	color: #000;
+	float: left;
+	font-weight: bold;
+	margin-left: 120px;
+}
+div.zoomout {
+	width: 137px;
+	float: right;
+	text-align: center;
+	background-color: #8AA93E;
+	color: white;
+	font-size: 14px;
+	padding: 5px 0px;
+	margin-top: -660px;
+	margin-right: 5px;
+	cursor:pointer;
+}
+
+#gove_details {
+	margin-top: 45px;
+	margin-left: 30px;
+	width: 745px;
+	height: 338px;
+	background-color: #E6E6E6;
+}
+#gove_details > img {
+	margin-left: 60px;
+	margin-top: 20px;
+}
+.t3 {
+	width: 98%;
+	//width: 70%;
+	//margin-top: -105px;
+	//margin-left: 200px;
+	border-bottom: 2px solid #5C5C5C;
+}
+.t4 {
+	width: 98%;
+	//width: 70%;
+	//margin-left: 200px;
+	border-bottom: 2px solid #5C5C5C;
+}
+.t5 {
+	width: 98%;
+	//width: 70%;
+	//margin-left: 200px;
+	border-bottom: 2px solid #5C5C5C;
+}
+.t6 {
+	width: 98%;
+	//width: 70%;
+	//margin-left: 200px;
+}
+
+
+/* Modal */
+div#info_cand_gove, div#info_cand_sena {
+	position: absolute;
+	top: 0px;
+	width: 780px;
+	background: rgba(255,255,255,.9);
+	height: 1076px !important;
+	overflow-x: hidden;
+	overflow-y: visible;
+	clear: both;
+}
+
+div.svg_state svg {
+	width: 200px;
+	height: 120px;
+}
+
+.f_l {
+	float: left;
+	margin-left: 60px;
+}
+div.sign_can {
+	color: white;
+	width: 92px;
+	text-align: center;
+	margin-left: -92;
+	font-family: 'latobold';	
+	font-size:13px;
+	padding: 3px 0px;
+}
+
+div.sign_can.dem {
+	background-color: #3E65AA;
+}
+
+div.sign_can.rep {
+	background-color: #E93838;
+}
+
+div.sign_can.som {
+	background-color: #A0A0A0;
+}
+
+.gov_left{
+    float: left;
+    margin: 25px 0 0 0;
+}
+
+.gov_right{
+	float: right;
+	width: 70%;
+}
+
+.special_election_msg{
+	float: right;
+	margin: 10px 20px 0 9px;
+	font-size: 13px;
+}
+
+@media only screen and (max-width: 479px) {
+	
+	.mov_can_pic {
+		margin-left: -50px;
+	}
+
+	.mov_cand_num {
+		margin-left: -40px;
+	}
+
+	.candidates_senadores_left_i_mov {
+		width: 90%;
+	}
+
+	.link_can_mov {
+		margin-left: 10px;
+		margin-top: 10px;
+	}
+
+	.mand_can_mov {
+		float: none;
+		margin-top: 10px;
+		margin-left: 10px;
+	}
+
+	.num_mand_mov {
+		margin-left: 10px;
+		margin-top: 45px;
+	}
+
+	.l_incumbent_mov {
+		float: none;
+		margin-left: 10px;
+	}
+
+	.line_cand_1_mov {
+		display: inline-block !important;
+		width: 160px;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-top: 10px;
+		float: none;
+	}
+
+	.line_cand_2_mov {
+		display: inline-block !important;
+		float: left;
+		margin-left: 10px;
+		width: 160px;
+		margin-top: 10px;
+	}
+
+	.line_cand_1_mov2 {
+		display: inline-block !important;
+		width: 160px;
+		margin-left: 100px;
+		float: none;
+		margin-top: -100px;
+	}
+
+	.link_can_mov2 { 
+		margin-top: -85px;
+	}
+
+	.line_cand_2_mov2 {
+		display: inline-block !important;
+		margin-top: -55px;
+		width: 160px;
+		margin-left: 100px;
+		float: none;
+	}
+
+	.charge_can_s_mov2 {
+		margin-top: -45px;
+	}
+
+	.charge_s > li {
+		margin-top: -25px;
+	}
+
+	.header {
+		height: 100px;
+	}
+}

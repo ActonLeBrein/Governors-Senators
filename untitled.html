@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+#states {
+  fill: #aaa;
+}
+
+#states .active {
+  fill: orange;
+}
+
+#state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: left;
+  width: 180px;
+  height: 30px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+path {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: .5px;
+}
+
+path:hover {
+  fill: red;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script>
+
+states_codes = [
+    {"code": 1,"name": "Alabama","abbreviation": "AL"},
+    {"code": 2,"name": "Alaska","abbreviation": "AK"},
+    {"code": 4,"name": "Arizona","abbreviation": "AZ"},
+    {"code": 5,"name": "Arkansas","abbreviation": "AR"},
+    {"code": 6,"name": "California","abbreviation": "CA"},
+    {"code": 8,"name": "Colorado","abbreviation": "CO"},
+    {"code": 9,"name": "Connecticut","abbreviation": "CT"},
+    {"code": 10,"name": "Delaware","abbreviation": "DE"},
+    {"code": 11,"name": "District Of Columbia","abbreviation": "DC"},
+    {"code": 12,"name": "Florida","abbreviation": "FL"},
+    {"code": 13,"name": "Georgia","abbreviation": "GA"},
+    {"code": 14,"name": "Guam","abbreviation": "GU"},
+    {"code": 15,"name": "Hawaii","abbreviation": "HI"},
+    {"code": 16,"name": "Idaho","abbreviation": "ID"},
+    {"code": 17,"name": "Illinois","abbreviation": "IL"},
+    {"code": 18,"name": "Indiana","abbreviation": "IN"},
+    {"code": 19,"name": "Iowa","abbreviation": "IA"},
+    {"code": 20,"name": "Kansas","abbreviation": "KS"},
+    {"code": 21,"name": "Kentucky","abbreviation": "KY"},
+    {"code": 22,"name": "Louisiana","abbreviation": "LA"},
+    {"code": 23,"name": "Maine","abbreviation": "ME"},
+    {"code": 24,"name": "Maryland","abbreviation": "MD"},
+    {"code": 25,"name": "Massachusetts","abbreviation": "MA"},
+    {"code": 26,"name": "Michigan","abbreviation": "MI"},
+    {"code": 27,"name": "Minnesota","abbreviation": "MN"},
+    {"code": 28,"name": "Mississippi","abbreviation": "MS"},
+    {"code": 29,"name": "Missouri","abbreviation": "MO"},
+    {"code": 30,"name": "Montana","abbreviation": "MT"},
+    {"code": 31,"name": "Nebraska","abbreviation": "NE"},
+    {"code": 32,"name": "Nevada","abbreviation": "NV"},
+    {"code": 33,"name": "New Hampshire","abbreviation": "NH"},
+    {"code": 34,"name": "New Jersey","abbreviation": "NJ"},
+    {"code": 35,"name": "New Mexico","abbreviation": "NM"},
+    {"code": 36,"name": "New York","abbreviation": "NY"},
+    {"code": 37,"name": "North Carolina","abbreviation": "NC"},
+    {"code": 38,"name": "North Dakota","abbreviation": "ND"},
+    {"code": 39,"name": "Ohio","abbreviation": "OH"},
+    {"code": 40,"name": "Oklahoma","abbreviation": "OK"},
+    {"code": 41,"name": "Oregon","abbreviation": "OR"},
+    {"code": 42,"name": "Pennsylvania","abbreviation": "PA"},
+    {"code": 43,"name": "Rhode Island","abbreviation": "RI"},
+    {"code": 44,"name": "South Carolina","abbreviation": "SC"},
+    {"code": 45,"name": "South Dakota","abbreviation": "SD"},
+    {"code": 46,"name": "Tennessee","abbreviation": "TN"},
+    {"code": 47,"name": "Texas","abbreviation": "TX"},
+    {"code": 48,"name": "Utah","abbreviation": "UT"},
+    {"code": 49,"name": "Vermont","abbreviation": "VT"},
+    {"code": 50,"name": "Virginia","abbreviation": "VA"},
+    {"code": 51,"name": "Washington","abbreviation": "WA"},
+    {"code": 52,"name": "West Virginia","abbreviation": "WV"},
+    {"code": 53,"name": "Wisconsin","abbreviation": "WI"},
+    {"code": 54,"name": "Wyoming","abbreviation": "WY"}
+];
+
+var ancho = $(window).width();
+var width,
+    height = 500,
+    centered;
+if (ancho <= 428) {
+  width = 320
+}
+else {
+  width = 960
+};
+
+var projection = d3.geo.albersUsa()
+    .scale(1070)
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var div = d3.select("body").append("div")   
+    .attr("class", "tooltip")               
+    .style("opacity", 0);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.append("rect")
+    .attr("class", "background")
+    .attr("width", width)
+    .attr("height", height)
+    .on("click", clicked);
+
+var g = svg.append("g");
+
+d3.json("/Gobernadores_Senadores/js/us.json", function(error, us) {
+  g.append("g")
+      .attr("id", "states")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.states).features)
+    .enter().append("path")
+      .attr("d", path)
+      .on("click", clicked);
+
+  g.append("path")
+      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+      .attr("id", "state-borders")
+      .attr("d", path);
+});
+
+console.log(ancho);
+if (ancho <= 428) {
+  g.attr("transform","translate(89,60)scale(.38)");
+};
+
+function clicked(d) {
+  var x, y, k, st_code, st, abb;
+
+  st_code = d.id;
+  st = seek_name(st_code);
+
+  if (d && centered !== d) {
+    var centroid = path.centroid(d);
+    x = centroid[0];
+    y = centroid[1];
+    k = 4;
+    centered = d;
+    div.transition()
+      .duration(200)
+      .style("opacity", .9)
+    div.html("Code: "+st_code+"<br/>"+"County: "+st)
+      .style("left", (d3.event.pageX) + "px")
+      .style("top", (d3.event.pageY - 28) + "px");
+  }
+  else {
+    x = width / 2;
+    y = height / 2;
+    if (ancho > 428) {
+      k = 1;
+    }
+    else {
+      k = .38;
+    }
+    centered = null;
+    div.transition()
+      .duration(500)
+      .style("opacity", 0);
+  }
+
+  g.selectAll("path")
+      .classed("active", centered && function(d) { return d === centered; });
+
+  g.transition()
+      .duration(750)
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+      .style("stroke-width", 1.5 / k + "px");
+}
+
+function seek_name(id) {
+  for (var i = 0; i <= county_codes.length - 1; i++) {
+    if (county_codes[i].code == id) {
+      return county_codes[i].county
+    };
+  };
+}
+
+</script>
